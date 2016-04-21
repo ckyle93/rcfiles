@@ -1,9 +1,15 @@
-# This is Git's per-user configuration file.
+[core]
+	editor = vim
 [user]
-# Please adapt and uncomment the following lines:
 	name = Chris Kyle
 	email = ckyle@ucsc.edu
 [push]
 	default = simple
-[core]
-	editor = vim
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+    co = checkout
+    br = branch 
+	d = difftool

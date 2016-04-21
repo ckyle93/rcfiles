@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/ckyle/Desktop/web2py/applications/ideal/.git'
+let g:netrw_dirhist_2='/home/ckyle/Documents/cmps112/hw5'
+let g:netrw_dirhist_3='/home/ckyle/Documents/cmps112'
+let g:netrw_dirhist_4='/home/ckyle/Documents/128'
+let g:netrw_dirhist_5='/home/ckyle/Documents/django/mysite/polls'
+let g:netrw_dirhist_6='/usr/share/vim/vim74/doc'
