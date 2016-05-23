@@ -52,7 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git colorize screen zsh-syntax-highlighting)
 
 # User configuration
-
+export EDITOR='vim'
   export PATH="/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/home/ckyle/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -83,7 +83,7 @@ source $ZSH/oh-my-zsh.sh
 alias w2p="python ~/Desktop/web2py/web2py.py"
 alias ideal="cd ~/Desktop/web2py/applications/ideal"
 alias python="python3"
-alias slug="~/Documents/"
+alias slug="~/Documents/SlugChat"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-xmodmap ~/keymap
+# xmodmap ~/keymap
 xbindkeys

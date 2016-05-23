@@ -26,7 +26,7 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_python_checkers = ['flake8']
 
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['.py'],'passive_filetypes': [] }
 nnoremap <leader>s :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
 colorscheme badwolf
@@ -90,17 +90,32 @@ set confirm
 " "press <Enter> to continue"
 set cmdheight=2
 
-if &t_Co > 2 || has("gui_running")
-	" switch syntax highlighting on, when the terminal has colors
-	syntax on
-endif
+" Set F5 to display buffers, then open buffer specified by number
+nnoremap <F5> :buffers<CR>:buffer<Space>
+
+let python_highlight_all=1
+syntax on
+
+"Easier navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" Enable folding with the spacebar
+nnoremap <space> za
+
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set pastetoggle=<F2>
 set mouse=a
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
-nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <leader>l :nohl<CR><C-L>
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
@@ -119,3 +134,21 @@ nnoremap ^ <nop>
 nnoremap gV `[v`]
 
 let &titleold=getcwd()
+
+" Language specific settings
+
+" PEP8 compliant settings
+au BufNewFile,BufRead *.py 
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
+
+" Javascript, HTML, and CSS settings
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
