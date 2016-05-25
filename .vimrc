@@ -91,6 +91,12 @@ set lazyredraw          " redraw only when we need to.
 " Better command-line completion
 set wildmenu
 
+" Make file tab completion easier when opening files. First tab will complete
+" as much as possible, second produces a list, and third cycles through the
+" files
+set wildmode=longest,list,full
+set wildmenu
+
 " Show partial commands in the last line of the screen
 set showcmd
 
