@@ -1,15 +1,43 @@
-" This must be first, becuase it changes other options as side effect
-set nocompatible
+" Chris Kyle's .vimrc
 
-execute pathogen#infect()
+
+" Vundle Section --------------------------------------------------------------
+" This must be first, becuase it changes other options as side effect
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'valloric/youcompleteme'
+Plugin 'sjl/gundo.vim'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
+" Attempt to determine the type of a file based on its name and possibly its
+" contents. Use this to allow intelligent auto-indenting for each filetype,
+" and for plugins that are filetype specific.
+filetype plugin indent on    " required
+" End Vundle Section -----------------------------------------------------------
 
 let mapleader=","       " leader is comma
 
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
-
-" save session
-nnoremap <leader>x :mksession<CR>
 
 " toggle NERDTree
 map <leader>n :NERDTreeToggle<CR>
@@ -57,10 +85,6 @@ set noerrorbells         " don't beep
 
 set cursorline          " highlight current line
 
-" Attempt to determine the type of a file based on its name and possibly its
-" contents. Use this to allow intelligent auto-indenting for each filetype,
-" and for plugins that are filetype specific.
-filetype indent plugin on
 
 set lazyredraw          " redraw only when we need to.
 
@@ -113,7 +137,7 @@ set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set pastetoggle=<F2>
 set mouse=a
-" Map <C-L> (redraw screen) to also turn off search highlighting until the
+" Map <leader>l (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <leader>l :nohl<CR><C-L>
 map <up> <nop>
