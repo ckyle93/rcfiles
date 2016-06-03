@@ -57,7 +57,9 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['.py'],'passive_filetypes': [] }
 nnoremap <leader>s :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
-colorscheme badwolf
+let g:airline#extensions#tabline#enabled = 1
+
+colorscheme molokai
 set hidden
 set nowrap        " don't wrap lines
 set tabstop=4     " a tab is four spaces
